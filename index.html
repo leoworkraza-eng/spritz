@@ -29,51 +29,81 @@
   </head>
 
   <body>
+    <!-- BARCELONA SUMMER SKY — animated header backdrop -->
+    <div class="sky" aria-hidden="true">
+      <div class="sky-sun">
+        <div class="sun-core"></div>
+        <div class="sun-halo"></div>
+      </div>
+      <div class="cloud cloud-1"></div>
+      <div class="cloud cloud-2"></div>
+      <div class="cloud cloud-3"></div>
+      <div class="cloud cloud-4"></div>
+      <div class="sky-gulls">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+
     <header class="topbar">
       <a class="brand" href="#top">
         <img class="brand-logo" src="assets/web/logo.png" alt="Spritz" />
       </a>
       <nav class="nav" aria-label="Secciones">
-        <a href="#carta">La carta</a>
-        <a href="#historia">El bar</a>
-        <a href="#visita">Dónde estamos</a>
+        <a href="#carta" data-i18n="nav_menu">La carta</a>
+        <a href="#historia" data-i18n="nav_bar">El bar</a>
+        <a href="#visita" data-i18n="nav_visit">Dónde estamos</a>
       </nav>
-      <a class="top-cta" href="#visita">Cómo llegar</a>
+      <div class="topbar-right">
+        <div class="lang-switch" role="group" aria-label="Idioma">
+          <button type="button" class="lang-btn" data-lang="ca" aria-pressed="false">CA</button>
+          <button type="button" class="lang-btn active" data-lang="es" aria-pressed="true">ES</button>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <a class="top-cta" href="#visita" data-i18n="nav_cta">Cómo llegar</a>
+      </div>
     </header>
 
     <main id="top">
       <!-- HERO -->
       <section class="hero">
         <div class="hero-copy">
-          <p class="eyebrow">Detrás de la Catedral · desde 2007</p>
-          <h1>Spritzes a <span class="price-pop">4,80€</span> y cero postureo.</h1>
-          <p class="hero-sub">
+          <p class="eyebrow" data-i18n="hero_eyebrow">Detrás de la Catedral · desde 2007</p>
+          <h1 data-i18n-html="hero_title">Spritzes a <span class="price-pop">4,80€</span> y cero postureo.</h1>
+          <p class="hero-sub" data-i18n="hero_sub">
             Un bar pequeño y acogedor donde el vermut se toma despacio y la pared naranja
             ya es un clásico del barrio. Buenas copas, tapas simples, precios de barrio.
           </p>
-          <p class="no-reservas">Sin reservas. Solo ven — te buscamos sitio.</p>
+          <p class="no-reservas" data-i18n="hero_no_reservas">Sin reservas. Solo ven — te buscamos sitio.</p>
           <div class="hero-actions">
-            <a class="btn primary" href="#carta">Ver la carta</a>
-            <a class="btn ghost" href="#visita">Dónde estamos ↗</a>
+            <a class="btn primary" href="#carta" data-i18n="hero_cta_menu">Ver la carta</a>
+            <a class="btn ghost" href="#visita" data-i18n="hero_cta_visit">Dónde estamos ↗</a>
           </div>
         </div>
-        <div class="hero-media">
-          <img src="assets/web/orange-wall.jpg" alt="La pared naranja de Spritz Barcelona con plantas colgando" />
+        <div class="hero-media cinematic">
+          <video
+            src="assets/web/video/pour.mp4"
+            autoplay muted loop playsinline
+            poster="assets/web/video/pour-poster.jpg"
+            aria-label="Un spritz servido en la barra de Spritz Barcelona"
+          ></video>
         </div>
       </section>
 
       <!-- HIGHLIGHTS -->
       <section class="highlights">
-        <div class="highlight"><strong>10 spritzes, un precio</strong><span>Aperol, Campari, Cynar, Hugo… todos a 4,80€</span></div>
-        <div class="highlight"><strong>Desde 2007</strong><span>Casi 20 años de Thursday nights detrás de la Catedral</span></div>
-        <div class="highlight"><strong>Sin reservas</strong><span>Entra, pide, disfruta — como siempre se ha hecho</span></div>
+        <div class="highlight"><strong data-i18n="hl1_title">10 spritzes, un precio</strong><span data-i18n="hl1_sub">Aperol, Campari, Cynar, Hugo… todos a 4,80€</span></div>
+        <div class="highlight"><strong data-i18n="hl2_title">Desde 2007</strong><span data-i18n="hl2_sub">Casi 20 años de Thursday nights detrás de la Catedral</span></div>
+        <div class="highlight"><strong data-i18n="hl3_title">Sin reservas</strong><span data-i18n="hl3_sub">Entra, pide, disfruta — como siempre se ha hecho</span></div>
       </section>
+
+      <!-- BUBBLE DIVIDER -->
+      <div class="bubble-divider" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
 
       <!-- CARTA -->
       <section id="carta" class="section">
         <div class="section-head">
-          <h2>La carta</h2>
-          <p>
+          <h2 data-i18n="menu_title">La carta</h2>
+          <p data-i18n="menu_sub">
             Diez spritzes de amargo a dulce — como en el Spritzómetro del bar. Cócteles
             clásicos sin adornos y tapas para picar. <strong>Spritz + focaccia: 8€</strong> —
             el combo que lo explica todo.
@@ -81,74 +111,111 @@
         </div>
 
         <div class="spritz-strip" id="spritzStrip" aria-hidden="true">
-          <span class="strip-label">dulce</span>
+          <span class="strip-label" data-i18n="strip_sweet">dulce</span>
           <div class="strip-dots"></div>
-          <span class="strip-label">amargo</span>
+          <span class="strip-label" data-i18n="strip_bitter">amargo</span>
         </div>
 
         <div class="menu-columns">
-          <section class="menu-block" id="menuSpritzes">
-            <h3>🥂 Spritz <span class="menu-price-note">todos a 4,80€</span></h3>
+          <section class="menu-block">
+            <h3>🥂 <span data-i18n="menu_spritz">Spritz</span> <span class="menu-price-note" data-i18n="menu_spritz_note">todos a 4,80€</span></h3>
             <ul id="spritzList"></ul>
           </section>
 
-          <section class="menu-block" id="menuCocktails">
-            <h3>🍹 Cócteles <span class="menu-price-note">6,80€</span></h3>
+          <section class="menu-block">
+            <h3>🍹 <span data-i18n="menu_cocktails">Cócteles</span> <span class="menu-price-note" data-i18n="menu_cocktails_note">6,80€</span></h3>
             <ul id="cocktailList"></ul>
           </section>
 
-          <section class="menu-block" id="menuTapas">
-            <h3>🫒 Para picar</h3>
+          <section class="menu-block">
+            <h3>🫒 <span data-i18n="menu_tapas">Para picar</span></h3>
             <ul id="tapasList"></ul>
             <div class="combo-card" id="comboList"></div>
           </section>
 
-          <section class="menu-block" id="menuBebidas">
-            <h3>🍺 Y también…</h3>
+          <section class="menu-block">
+            <h3>🍺 <span data-i18n="menu_drinks">Y también…</span></h3>
             <ul id="bebidasList"></ul>
-            <p class="menu-note">IVA incluido. También tenemos opciones sin alcohol.</p>
+            <p class="menu-note" data-i18n="menu_note">IVA incluido. También tenemos opciones sin alcohol.</p>
           </section>
         </div>
 
-        <figure class="menu-photo">
+        <figure class="menu-photo cinematic">
           <img src="assets/web/menu-board.jpg" alt="Las pizarras de la carta en Spritz Barcelona" loading="lazy" />
-          <figcaption>Las pizarras de siempre. Bon profit!</figcaption>
+          <figcaption data-i18n="menu_photo_caption">Las pizarras de siempre. Bon profit!</figcaption>
         </figure>
+      </section>
+
+      <!-- CINEMA — the videos -->
+      <section id="cinema" class="cinema-section">
+        <div class="section-head center">
+          <h2 data-i18n="cinema_title">El ambiente, en movimiento</h2>
+          <p data-i18n="cinema_sub">Un minuto en la barra. Esto no es publicidad — es un martes cualquiera.</p>
+        </div>
+        <div class="cinema-row">
+          <figure class="cinema-card cinematic">
+            <video
+              src="assets/web/video/bar-action.mp4"
+              autoplay muted loop playsinline
+              poster="assets/web/video/bar-action-poster.jpg"
+              aria-label="Movimiento en la barra de Spritz"
+            ></video>
+            <figcaption data-i18n="cinema_cap1">La barra, a las siete</figcaption>
+          </figure>
+          <figure class="cinema-card cinematic">
+            <video
+              src="assets/web/video/cheers.mp4"
+              autoplay muted loop playsinline
+              poster="assets/web/video/cheers-poster.jpg"
+              aria-label="Un brindis en Spritz Barcelona"
+            ></video>
+            <figcaption data-i18n="cinema_cap2">Salud!</figcaption>
+          </figure>
+          <figure class="cinema-card cinematic">
+            <video
+              src="assets/web/video/ambience.mp4"
+              autoplay muted loop playsinline
+              poster="assets/web/video/ambience-poster.jpg"
+              aria-label="El ambiente en Spritz Barcelona"
+            ></video>
+            <figcaption data-i18n="cinema_cap3">Y así, hasta la medianoche</figcaption>
+          </figure>
+        </div>
       </section>
 
       <!-- HISTORIA -->
       <section id="historia" class="section about">
-        <div class="about-media">
+        <div class="about-media cinematic">
           <img src="assets/web/bar-shelf.jpg" alt="La barra de Spritz Barcelona con las botellas iluminadas" loading="lazy" />
         </div>
         <div class="about-copy">
-          <h2>Un bar de barrio, en toda regla</h2>
-          <p>
+          <h2 data-i18n="about_title">Un bar de barrio, en toda regla</h2>
+          <p data-i18n="about_p1">
             Abrimos en 2007 en un callejón detrás de la Catedral y desde entonces no hemos
             cambiado la fórmula: buena bebida, tapas sencillas, música y conversación hasta
             que el cuerpo pida cama.
           </p>
-          <p>
+          <p data-i18n="about_p2">
             Detrás de la barra conocemos a la gente por su nombre (y por su spritz
             favorito). Ven solo, ven con tres, ven con doce — siempre hay sitio para uno más.
           </p>
-          <p class="about-signature">— el equipo de Spritz</p>
+          <p class="about-signature" data-i18n="about_sig">— el equipo de Spritz</p>
         </div>
       </section>
 
       <!-- GALERÍA -->
       <section class="gallery" aria-label="Fotos del bar">
-        <img src="assets/web/spritzometro.jpg" alt="El Spritzómetro: la escala de amargura de nuestros spritzes" loading="lazy" />
-        <img src="assets/web/shots-tray.jpg" alt="Una bandeja de chupitos saliendo de la barra" loading="lazy" />
-        <img src="assets/web/aperol-neon.jpg" alt="El rótulo de Aperol Spritz en la pared" loading="lazy" />
-        <img src="assets/web/bar-crowd.jpg" alt="Ambiente en la barra de Spritz" loading="lazy" />
+        <figure class="cinematic"><img src="assets/web/spritzometro.jpg" alt="El Spritzómetro: la escala de amargura de nuestros spritzes" loading="lazy" /></figure>
+        <figure class="cinematic"><img src="assets/web/shots-tray.jpg" alt="Una bandeja de chupitos saliendo de la barra" loading="lazy" /></figure>
+        <figure class="cinematic"><img src="assets/web/aperol-neon.jpg" alt="El rótulo de Aperol Spritz en la pared" loading="lazy" /></figure>
+        <figure class="cinematic"><img src="assets/web/bar-crowd.jpg" alt="Ambiente en la barra de Spritz" loading="lazy" /></figure>
       </section>
 
       <!-- VISITA -->
       <section id="visita" class="section visit">
         <div class="visit-info">
-          <h2> Ven a vernos</h2>
-          <p class="visit-lede">
+          <h2 data-i18n="visit_title">Ven a vernos</h2>
+          <p class="visit-lede" data-i18n="visit_lede">
             Estamos a dos calles de la Catedral, en el casco antiguo. Si llegas al
             antiguo mercat del Born, ya casi estás.
           </p>
@@ -156,7 +223,8 @@
           <address>
             Carrer de la Tapineria 6<br />
             08002 Barcelona (Ciutat Vella)<br />
-            <a href="#" id="igLink1">@spritzbarcelona</a> en Instagram
+            <a href="https://instagram.com/spritzbarcelona" target="_blank" rel="noopener">@spritzbarcelona</a>
+            <span data-i18n="visit_on_ig">en Instagram</span>
           </address>
           <div class="visit-actions">
             <a
@@ -164,7 +232,7 @@
               href="https://www.google.com/maps/search/?api=1&query=Spritz+Carrer+de+la+Tapineria+6+Barcelona"
               target="_blank"
               rel="noopener"
-              >Abrir en Google Maps ↗</a
+              data-i18n="visit_maps_btn">Abrir en Google Maps ↗</a
             >
           </div>
         </div>
@@ -187,7 +255,6 @@
       </div>
       <div class="footer-links">
         <a href="https://instagram.com/spritzbarcelona" target="_blank" rel="noopener">Instagram</a>
-        <a href="tel:+34930000000" hidden></a>
       </div>
       <small>© <span id="year"></span> Spritz Barcelona</small>
     </footer>
