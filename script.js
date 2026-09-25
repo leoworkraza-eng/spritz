@@ -311,15 +311,15 @@ const renderHours = () => {
   if (!list) return;
   const dict = I18N[currentLang];
 
-  // TODO: confirm real hours with the owner before launch
+  // Real hours confirmed by the client (sep 2026)
   const hours = [
-    ["17:00 – 01:00"],
-    ["17:00 – 01:00"],
-    ["17:00 – 01:00"],
-    ["17:00 – 01:00"],
-    ["17:00 – 02:00"],
-    ["17:00 – 02:00"],
-    [null],
+    ["12:00 – 00:00"],
+    ["12:00 – 00:00"],
+    ["12:00 – 00:00"],
+    ["12:00 – 02:00"],
+    ["12:00 – 02:00"],
+    ["12:00 – 02:00"],
+    ["12:00 – 00:00"],
   ];
 
   list.innerHTML = hours

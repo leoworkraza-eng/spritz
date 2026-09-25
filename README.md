@@ -17,7 +17,7 @@ Plain HTML/CSS/JS — no build step. Deploys to Vercel/Cloudflare Pages as-is.
 
 ## Before launch — TODO
 
-- [ ] Confirm real opening hours with owner (currently a guess)
+- [x] Confirm real opening hours with owner (done: open daily 12:00–00:00, Fri/Sat & Thu til 02:00)
 - [ ] Resolve price discrepancy: neon sign says 4,50€, letterboard says 4,80€
 - [ ] Get owner's phone/WhatsApp (none published on site — intentional until confirmed)
 - [ ] Google Business Profile + Apple Business Connect AFTER domain is live
