@@ -1,0 +1,374 @@
+/* ============================================================
+   SPRITZ BARCELONA — styles
+   Palette & texture pulled from the room itself:
+   burnt-orange wall, pine wood, letterboard black, cream.
+   ============================================================ */
+
+:root {
+  /* Brand palette — from the orange wall + pine + letterboards */
+  --c-primary: #e85d1f;        /* burnt orange — buttons, accents, prices */
+  --c-primary-dark: #c94a12;   /* hover states */
+  --c-bg: #faf3ea;             /* warm cream page background */
+  --c-surface: #fffdf9;        /* cards, panels */
+  --c-text: #2b1d12;           /* deep warm brown text */
+  --c-text-muted: #826a52;     /* secondary text */
+  --c-border: #ecdfcd;
+  --c-wood: #d9a86b;           /* pine tone for strips/badges */
+  --c-board: #221a14;          /* letterboard black */
+  --c-board-text: #f5ede2;     /* letterboard cream text */
+
+  /* Typography */
+  --font-display: "Lobster", cursive;     /* retro script, like the wall logo */
+  --font-body: "Nunito Sans", sans-serif;
+  --font-hand: "Caveat", cursive;         /* handwritten accents */
+
+  /* Shape & rhythm */
+  --radius: 16px;
+  --radius-sm: 10px;
+  --max-width: 1100px;
+  --shadow: 0 10px 30px rgb(43 29 18 / 0.1);
+  --board-shadow: inset 0 0 0 4px #3a2c1f, 0 8px 24px rgb(43 29 18 / 0.18);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+section[id] { scroll-margin-top: 80px; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--c-bg);
+  color: var(--c-text);
+  line-height: 1.6;
+}
+
+img { max-width: 100%; display: block; }
+
+h1, h2, h3 { font-family: var(--font-body); line-height: 1.15; }
+
+/* ---------- Topbar ---------- */
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem max(1.25rem, calc((100vw - var(--max-width)) / 2));
+  background: color-mix(in srgb, var(--c-bg) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--c-border);
+}
+
+.brand { display: flex; align-items: center; gap: 0.6rem; text-decoration: none; color: inherit; }
+.brand-logo { height: 52px; width: auto; }
+.brand-name { font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; }
+
+.nav { display: flex; gap: 1.4rem; }
+.nav a {
+  color: var(--c-text-muted);
+  text-decoration: none;
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+.nav a:hover { color: var(--c-primary); }
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 1.5px solid transparent;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+.btn.primary { background: var(--c-primary); color: #fff; }
+.btn.primary:hover { background: var(--c-primary-dark); }
+.btn.ghost { border-color: var(--c-border); color: var(--c-text); background: transparent; }
+.btn.ghost:hover { border-color: var(--c-primary); color: var(--c-primary); }
+
+.top-cta { display: none; }
+
+/* ---------- Hero ---------- */
+.hero {
+  display: grid;
+  grid-template-columns: 1.05fr 1fr;
+  gap: 3rem;
+  align-items: center;
+  padding: 4.5rem max(1.25rem, calc((100vw - var(--max-width)) / 2));
+}
+.eyebrow {
+  color: var(--c-primary);
+  font-weight: 800;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 0.8rem;
+}
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.4rem); font-weight: 800; margin-bottom: 1rem; }
+.price-pop {
+  color: var(--c-primary);
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: 1.15em;
+}
+.hero-sub { color: var(--c-text-muted); font-size: 1.1rem; max-width: 46ch; }
+.no-reservas {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  color: var(--c-primary);
+  margin-top: 1.2rem;
+  transform: rotate(-1.5deg);
+  display: inline-block;
+}
+.hero-actions { display: flex; gap: 0.8rem; margin-top: 1.4rem; flex-wrap: wrap; }
+.hero-media img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* ---------- Highlights ---------- */
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  padding: 0 max(1.25rem, calc((100vw - var(--max-width)) / 2)) 3rem;
+}
+.highlight {
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius);
+  padding: 1.2rem 1.4rem;
+  display: grid;
+  gap: 0.2rem;
+}
+.highlight strong { font-size: 0.98rem; }
+.highlight span { color: var(--c-text-muted); font-size: 0.88rem; }
+
+/* ---------- Sections ---------- */
+.section {
+  padding: 3.5rem max(1.25rem, calc((100vw - var(--max-width)) / 2));
+}
+.section-head { max-width: 62ch; margin-bottom: 2rem; }
+.section-head h2 {
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--c-primary-dark);
+}
+.section-head p { color: var(--c-text-muted); margin-top: 0.4rem; }
+
+/* ---------- Spritz strip (dulce → amargo) ---------- */
+.spritz-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1.8rem;
+}
+.strip-label {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--c-text-muted);
+  white-space: nowrap;
+}
+.strip-dots {
+  flex: 1;
+  height: 10px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #f7c948 0%, #f0932b 35%, #e85d1f 65%, #b02a12 100%);
+}
+
+/* ---------- Menu blocks: letterboard style ---------- */
+.menu-columns {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.4rem;
+}
+.menu-block {
+  background: var(--c-board);
+  border-radius: var(--radius);
+  padding: 1.6rem 1.7rem 1.7rem;
+  box-shadow: var(--board-shadow);
+  color: var(--c-board-text);
+}
+.menu-block h3 {
+  font-size: 1.3rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #f7c948;
+  margin-bottom: 1rem;
+  border-bottom: 1px dashed #4a3826;
+  padding-bottom: 0.6rem;
+}
+.menu-price-note {
+  display: block;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--c-wood);
+  text-transform: none;
+}
+.menu-block ul { list-style: none; }
+.menu-block li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.32rem 0;
+  font-size: 0.98rem;
+}
+.menu-block li .dots {
+  flex: 1;
+  border-bottom: 1px dotted #5b4630;
+  transform: translateY(-4px);
+}
+.menu-block li .item-price {
+  color: var(--c-wood);
+  font-weight: 700;
+  white-space: nowrap;
+}
+.menu-note { margin-top: 0.9rem; font-size: 0.85rem; color: #b39b7e; font-style: italic; }
+
+/* Combo card — the star of the letterboard */
+.combo-card {
+  margin-top: 1.2rem;
+  background: #f7c948;
+  color: var(--c-board);
+  border-radius: var(--radius-sm);
+  padding: 1rem 1.2rem;
+  text-align: center;
+}
+.combo-card .combo-title {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+.combo-card .combo-price {
+  display: block;
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+/* Menu photo */
+.menu-photo { margin-top: 2.2rem; text-align: center; }
+.menu-photo img {
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin: 0 auto;
+  max-height: 480px;
+  width: auto;
+  max-width: 100%;
+}
+.menu-photo figcaption {
+  margin-top: 0.8rem;
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--c-text-muted);
+}
+
+/* ---------- About ---------- */
+.about {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 3rem;
+  align-items: center;
+}
+.about-media img { border-radius: var(--radius); box-shadow: var(--shadow); aspect-ratio: 4 / 5; object-fit: cover; }
+.about-copy h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: var(--c-primary-dark);
+  margin-bottom: 1rem;
+}
+.about-copy p { color: var(--c-text-muted); margin-bottom: 0.8rem; }
+.about-signature { font-family: var(--font-hand); font-size: 1.4rem; color: var(--c-primary); }
+
+/* ---------- Gallery ---------- */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.9rem;
+  padding: 0 max(1.25rem, calc((100vw - var(--max-width)) / 2)) 3.5rem;
+}
+.gallery img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Visit ---------- */
+.visit {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  align-items: start;
+}
+.visit-info h2 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  font-size: clamp(1.9rem, 4vw, 2.6rem);
+  color: var(--c-primary-dark);
+  margin-bottom: 0.6rem;
+}
+.visit-lede { color: var(--c-text-muted); margin-bottom: 1.4rem; }
+.hours-list { list-style: none; margin-bottom: 1.2rem; }
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--c-border);
+  font-size: 0.95rem;
+}
+.hours-list li span:last-child { color: var(--c-text-muted); }
+.hours-list li.closed span:last-child { color: var(--c-primary); font-weight: 700; }
+address { font-style: normal; color: var(--c-text-muted); line-height: 1.8; margin-bottom: 1.4rem; }
+address a { color: var(--c-primary); text-decoration: none; font-weight: 700; }
+.visit-actions { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+.visit-map iframe {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border: 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem max(1.25rem, calc((100vw - var(--max-width)) / 2));
+  border-top: 1px solid var(--c-border);
+}
+.footer strong { font-family: var(--font-display); font-size: 1.3rem; font-weight: 400; color: var(--c-primary); }
+.footer span { color: var(--c-text-muted); font-size: 0.9rem; margin-left: 0.5rem; }
+.footer-links { display: flex; gap: 1.2rem; }
+.footer-links a { color: var(--c-text-muted); text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+.footer-links a:hover { color: var(--c-primary); }
+.footer small { color: var(--c-text-muted); }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 860px) {
+  .nav { display: none; }
+  .top-cta { display: inline-block; padding: 0.55rem 1.1rem; font-size: 0.85rem; }
+  .hero { grid-template-columns: 1fr; padding-top: 3rem; gap: 2rem; }
+  .hero-media img { aspect-ratio: 4 / 3; }
+  .highlights { grid-template-columns: 1fr; }
+  .menu-columns { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: repeat(2, 1fr); }
+  .about, .visit { grid-template-columns: 1fr; gap: 2rem; }
+}

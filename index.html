@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spritz Barcelona — Cocktail bar detrás de la Catedral desde 2007</title>
+    <meta
+      name="description"
+      content="Spritz Barcelona: cocktail bar y tapas en Carrer de la Tapineria 6, Ciutat Vella. Spritzes a 4,80€, cócteles 6,80€. Sin reservas — ven cuando quieras. Desde 2007."
+    />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Spritz Barcelona — desde 2007" />
+    <meta property="og:description" content="Spritzes a 4,80€, cócteles y tapas detrás de la Catedral. Sin reservas — solo ven." />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_ES" />
+    <meta property="og:image" content="assets/web/orange-wall.jpg" />
+
+    <!-- Fonts: retro script for the logo feel + friendly humanist body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lobster&family=Nunito+Sans:ital,opsz,wght@0,6..12,400;0,6..12,600;0,6..12,700;0,6..12,800;1,6..12,400&family=Caveat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/png" href="assets/web/logo.png" />
+  </head>
+
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <img class="brand-logo" src="assets/web/logo.png" alt="Spritz" />
+      </a>
+      <nav class="nav" aria-label="Secciones">
+        <a href="#carta">La carta</a>
+        <a href="#historia">El bar</a>
+        <a href="#visita">Dónde estamos</a>
+      </nav>
+      <a class="top-cta" href="#visita">Cómo llegar</a>
+    </header>
+
+    <main id="top">
+      <!-- HERO -->
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Detrás de la Catedral · desde 2007</p>
+          <h1>Spritzes a <span class="price-pop">4,80€</span> y cero postureo.</h1>
+          <p class="hero-sub">
+            Un bar pequeño y acogedor donde el vermut se toma despacio y la pared naranja
+            ya es un clásico del barrio. Buenas copas, tapas simples, precios de barrio.
+          </p>
+          <p class="no-reservas">Sin reservas. Solo ven — te buscamos sitio.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#carta">Ver la carta</a>
+            <a class="btn ghost" href="#visita">Dónde estamos ↗</a>
+          </div>
+        </div>
+        <div class="hero-media">
+          <img src="assets/web/orange-wall.jpg" alt="La pared naranja de Spritz Barcelona con plantas colgando" />
+        </div>
+      </section>
+
+      <!-- HIGHLIGHTS -->
+      <section class="highlights">
+        <div class="highlight"><strong>10 spritzes, un precio</strong><span>Aperol, Campari, Cynar, Hugo… todos a 4,80€</span></div>
+        <div class="highlight"><strong>Desde 2007</strong><span>Casi 20 años de Thursday nights detrás de la Catedral</span></div>
+        <div class="highlight"><strong>Sin reservas</strong><span>Entra, pide, disfruta — como siempre se ha hecho</span></div>
+      </section>
+
+      <!-- CARTA -->
+      <section id="carta" class="section">
+        <div class="section-head">
+          <h2>La carta</h2>
+          <p>
+            Diez spritzes de amargo a dulce — como en el Spritzómetro del bar. Cócteles
+            clásicos sin adornos y tapas para picar. <strong>Spritz + focaccia: 8€</strong> —
+            el combo que lo explica todo.
+          </p>
+        </div>
+
+        <div class="spritz-strip" id="spritzStrip" aria-hidden="true">
+          <span class="strip-label">dulce</span>
+          <div class="strip-dots"></div>
+          <span class="strip-label">amargo</span>
+        </div>
+
+        <div class="menu-columns">
+          <section class="menu-block" id="menuSpritzes">
+            <h3>🥂 Spritz <span class="menu-price-note">todos a 4,80€</span></h3>
+            <ul id="spritzList"></ul>
+          </section>
+
+          <section class="menu-block" id="menuCocktails">
+            <h3>🍹 Cócteles <span class="menu-price-note">6,80€</span></h3>
+            <ul id="cocktailList"></ul>
+          </section>
+
+          <section class="menu-block" id="menuTapas">
+            <h3>🫒 Para picar</h3>
+            <ul id="tapasList"></ul>
+            <div class="combo-card" id="comboList"></div>
+          </section>
+
+          <section class="menu-block" id="menuBebidas">
+            <h3>🍺 Y también…</h3>
+            <ul id="bebidasList"></ul>
+            <p class="menu-note">IVA incluido. También tenemos opciones sin alcohol.</p>
+          </section>
+        </div>
+
+        <figure class="menu-photo">
+          <img src="assets/web/menu-board.jpg" alt="Las pizarras de la carta en Spritz Barcelona" loading="lazy" />
+          <figcaption>Las pizarras de siempre. Bon profit!</figcaption>
+        </figure>
+      </section>
+
+      <!-- HISTORIA -->
+      <section id="historia" class="section about">
+        <div class="about-media">
+          <img src="assets/web/bar-shelf.jpg" alt="La barra de Spritz Barcelona con las botellas iluminadas" loading="lazy" />
+        </div>
+        <div class="about-copy">
+          <h2>Un bar de barrio, en toda regla</h2>
+          <p>
+            Abrimos en 2007 en un callejón detrás de la Catedral y desde entonces no hemos
+            cambiado la fórmula: buena bebida, tapas sencillas, música y conversación hasta
+            que el cuerpo pida cama.
+          </p>
+          <p>
+            Detrás de la barra conocemos a la gente por su nombre (y por su spritz
+            favorito). Ven solo, ven con tres, ven con doce — siempre hay sitio para uno más.
+          </p>
+          <p class="about-signature">— el equipo de Spritz</p>
+        </div>
+      </section>
+
+      <!-- GALERÍA -->
+      <section class="gallery" aria-label="Fotos del bar">
+        <img src="assets/web/spritzometro.jpg" alt="El Spritzómetro: la escala de amargura de nuestros spritzes" loading="lazy" />
+        <img src="assets/web/shots-tray.jpg" alt="Una bandeja de chupitos saliendo de la barra" loading="lazy" />
+        <img src="assets/web/aperol-neon.jpg" alt="El rótulo de Aperol Spritz en la pared" loading="lazy" />
+        <img src="assets/web/bar-crowd.jpg" alt="Ambiente en la barra de Spritz" loading="lazy" />
+      </section>
+
+      <!-- VISITA -->
+      <section id="visita" class="section visit">
+        <div class="visit-info">
+          <h2> Ven a vernos</h2>
+          <p class="visit-lede">
+            Estamos a dos calles de la Catedral, en el casco antiguo. Si llegas al
+            antiguo mercat del Born, ya casi estás.
+          </p>
+          <ul class="hours-list" id="hoursList"></ul>
+          <address>
+            Carrer de la Tapineria 6<br />
+            08002 Barcelona (Ciutat Vella)<br />
+            <a href="#" id="igLink1">@spritzbarcelona</a> en Instagram
+          </address>
+          <div class="visit-actions">
+            <a
+              class="btn primary"
+              href="https://www.google.com/maps/search/?api=1&query=Spritz+Carrer+de+la+Tapineria+6+Barcelona"
+              target="_blank"
+              rel="noopener"
+              >Abrir en Google Maps ↗</a
+            >
+          </div>
+        </div>
+        <div class="visit-map">
+          <iframe
+            title="Mapa — Spritz Barcelona"
+            src="https://www.google.com/maps?q=Carrer%20de%20la%20Tapineria%206%2C%2008002%20Barcelona&output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div>
+        <strong>Spritz</strong>
+        <span>desde 2007 · Carrer de la Tapineria 6, Barcelona</span>
+      </div>
+      <div class="footer-links">
+        <a href="https://instagram.com/spritzbarcelona" target="_blank" rel="noopener">Instagram</a>
+        <a href="tel:+34930000000" hidden></a>
+      </div>
+      <small>© <span id="year"></span> Spritz Barcelona</small>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
